@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ProductItem" t-inherit="point_of_sale.ProductItem" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('price-tag')]" position="before">
+            <t t-if="props.product.discount_tag">
+                <span class="discount-tag">
+                    <i class="fa fa-tag"></i>
+                    <t t-esc="props.product.discount_tag"/>%
+                </span>
+            </t>
+        </xpath>
+    </t>
+    <t t-name="Orderline" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension" owl="1">
+        <xpath expr="//ul[hasclass('info-list')]" position="after">
+            <t t-if="props.line.get_product().discount_tag">
+                <span class="discount-tag">
+                    With a
+                    <em>
+                        <t t-esc="props.line.get_product().discount_tag"/>%
+                    </em>
+                    discount
+<!--                    with a<t t-esc="props.line.get_product().discount_tag"/>%-->
+                </span>
+            </t>
+        </xpath>
+    </t>
+</templates>

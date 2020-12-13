@@ -1,0 +1,15 @@
+.pos .product .discount-tag {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: #7f82ac;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+.pos .order .orderline .discount-tag{
+    color: #888;
+    margin-left:10px;
+}
